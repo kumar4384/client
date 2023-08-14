@@ -12,11 +12,11 @@ export class AuditingService {
   constructor(private httpClient: HttpClient) { }
 
   getAuditData(): Observable<School[]> {
-    return this.httpClient.get<School[]>('http://localhost:5000/audit');
+    return this.httpClient.get<School[]>('/api/audit');
   }
 
   addSchoolDetails(schoolDetails: School): Observable<School> {
-    return this.httpClient.post<School>('http://localhost:5000/audit/add', schoolDetails).pipe(
+    return this.httpClient.post<School>('/api/audit/add', schoolDetails).pipe(
       map(res => {
         return res
       })
