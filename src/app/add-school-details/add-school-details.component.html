@@ -1,0 +1,120 @@
+<form class="form-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>School Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>UDISE No</mat-label>
+            <input matInput name="udiseNo" [(ngModel)]="udiseNo" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>School Type</mat-label>
+            <mat-select>
+              <mat-option value="one">High School</mat-option>
+              <mat-option value="two">Higher Sr School</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>School Name</mat-label>
+            <input matInput name="schoolName" [(ngModel)]="schoolName" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>District</mat-label>
+            <mat-select>
+              <mat-option value="one">Krishnagiri</mat-option>
+              <mat-option value="two">Dharmapuri</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>HM Name</mat-label>
+            <input matInput name="headmasterName" [(ngModel)]="headmasterName" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>HM Retirement Date</mat-label>
+            <input matInput [matDatepicker]="headmasterRetirementDatepicker"/>
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="headmasterRetirementDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #headmasterRetirementDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>HM Mobile No</mat-label>
+            <input matInput name="headmasterMobileNo" [(ngModel)]="headmasterMobileNo" />
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput name="email" [(ngModel)]="email" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Total Students</mat-label>
+            <input matInput name="studentsStrength" [(ngModel)]="studentsStrength" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Teachers Strength</mat-label>
+            <input matInput name="teachersStrength" [(ngModel)]="teachersStrength" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Clerical Strength</mat-label>
+            <input matInput name="clericalStrength" [(ngModel)]="clericalStrength" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Last Auditing Year</mat-label>
+            <input matInput name="lastAuditingYear" [(ngModel)]="lastAuditingYear" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field>
+            <mat-label>Last Auditing Date</mat-label>
+            <input matInput [matDatepicker]="lastAuditingDatepicker"/>
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="lastAuditingDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #lastAuditingDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="button-row">
+        <button mat-stroked-button color="primary">Cancel</button>
+        <button mat-stroked-button color="primary">Clear</button>
+        <button mat-raised-button color="primary" (click)="onConfirm()">Confirm</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

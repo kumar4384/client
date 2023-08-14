@@ -1,0 +1,70 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="udiseNo">
+    <th mat-header-cell *matHeaderCellDef>UDISE No</th>
+    <td mat-cell *matCellDef="let element">{{ element.udiseNo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="schoolName">
+    <th mat-header-cell *matHeaderCellDef>School Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.schoolName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="schoolType">
+    <th mat-header-cell *matHeaderCellDef>School Type</th>
+    <td mat-cell *matCellDef="let element">{{ element.schoolType }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="district">
+    <th mat-header-cell *matHeaderCellDef>District</th>
+    <td mat-cell *matCellDef="let element">{{ element.district }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="headmasterName">
+    <th mat-header-cell *matHeaderCellDef>Headmaster Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.headmasterName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="headmasterRetirementDate">
+    <th mat-header-cell *matHeaderCellDef>Headmaster Retirement Date</th>
+    <td mat-cell *matCellDef="let element">{{ element.headmasterRetirementDate }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="headmasterMobileNo">
+    <th mat-header-cell *matHeaderCellDef>Headmaster Mobile No</th>
+    <td mat-cell *matCellDef="let element">{{ element.headmasterMobileNo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="studentsStrength">
+    <th mat-header-cell *matHeaderCellDef>Students Strength</th>
+    <td mat-cell *matCellDef="let element">{{ element.studentsStrength }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="teachersStrength">
+    <th mat-header-cell *matHeaderCellDef>Teachers Strength</th>
+    <td mat-cell *matCellDef="let element">{{ element.teachersStrength }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="clericalStrength">
+    <th mat-header-cell *matHeaderCellDef>clerical Strength</th>
+    <td mat-cell *matCellDef="let element">{{ element.clericalStrength }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastAuditingYear">
+    <th mat-header-cell *matHeaderCellDef>Last Auditing Year</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastAuditingYear }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastAuditingDate">
+    <th mat-header-cell *matHeaderCellDef>Last Auditing Date</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastAuditingDate }}</td>
+  </ng-container>
+  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

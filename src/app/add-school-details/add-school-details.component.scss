@@ -1,0 +1,13 @@
+.form-container {
+  margin: 100px;
+}
+
+.button-row {
+  display: table-cell;
+  max-width: 600px;
+  margin-left: auto;
+}
+
+.button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
