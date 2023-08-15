@@ -8,15 +8,22 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>UDISE No</mat-label>
-            <input matInput name="udiseNo" [(ngModel)]="udiseNo" />
+            <input matInput name="udiseNo" [(ngModel)]="udiseNo" required />
           </mat-form-field>
         </div>
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>School Type</mat-label>
-            <mat-select>
-              <mat-option value="one">High School</mat-option>
-              <mat-option value="two">Higher Sr School</mat-option>
+            <mat-select
+              name="selectedSchoolType"
+              [(ngModel)]="schoolType"
+              required
+            >
+              <mat-option
+                *ngFor="let schoolType of schoolTypes"
+                [value]="schoolType"
+                >{{ schoolType }}</mat-option
+              >
             </mat-select>
           </mat-form-field>
         </div>
@@ -24,16 +31,24 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>School Name</mat-label>
-            <input matInput name="schoolName" [(ngModel)]="schoolName" />
+            <input
+              matInput
+              name="schoolName"
+              [(ngModel)]="schoolName"
+              required
+            />
           </mat-form-field>
         </div>
 
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>District</mat-label>
-            <mat-select>
-              <mat-option value="one">Krishnagiri</mat-option>
-              <mat-option value="two">Dharmapuri</mat-option>
+            <mat-select name="district" [(ngModel)]="district" required>
+              <mat-option
+                *ngFor="let district of districts"
+                [value]="district"
+                >{{ district }}</mat-option
+              >
             </mat-select>
           </mat-form-field>
         </div>
@@ -42,16 +57,30 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>HM Name</mat-label>
-            <input matInput name="headmasterName" [(ngModel)]="headmasterName" />
+            <input
+              matInput
+              name="headmasterName"
+              [(ngModel)]="headmasterName"
+              required
+            />
           </mat-form-field>
         </div>
 
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>HM Retirement Date</mat-label>
-            <input matInput [matDatepicker]="headmasterRetirementDatepicker"/>
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="headmasterRetirementDatepicker"></mat-datepicker-toggle>
+            <input
+              matInput
+              [matDatepicker]="headmasterRetirementDatepicker"
+              name="headmasterRetirementDate"
+              [(ngModel)]="headmasterRetirementDate"
+              [min]="minRetirementDate"
+              required
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="headmasterRetirementDatepicker"
+            ></mat-datepicker-toggle>
             <mat-datepicker #headmasterRetirementDatepicker></mat-datepicker>
           </mat-form-field>
         </div>
@@ -59,14 +88,19 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>HM Mobile No</mat-label>
-            <input matInput name="headmasterMobileNo" [(ngModel)]="headmasterMobileNo" />
+            <input
+              matInput
+              name="headmasterMobileNo"
+              [(ngModel)]="headmasterMobileNo"
+              required
+            />
           </mat-form-field>
         </div>
 
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput name="email" [(ngModel)]="email" />
+            <input matInput name="email" [(ngModel)]="email" required />
           </mat-form-field>
         </div>
       </div>
@@ -75,19 +109,34 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Total Students</mat-label>
-            <input matInput name="studentsStrength" [(ngModel)]="studentsStrength" />
+            <input
+              matInput
+              name="studentsStrength"
+              [(ngModel)]="studentsStrength"
+              required
+            />
           </mat-form-field>
         </div>
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Teachers Strength</mat-label>
-            <input matInput name="teachersStrength" [(ngModel)]="teachersStrength" />
+            <input
+              matInput
+              name="teachersStrength"
+              [(ngModel)]="teachersStrength"
+              required
+            />
           </mat-form-field>
         </div>
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Clerical Strength</mat-label>
-            <input matInput name="clericalStrength" [(ngModel)]="clericalStrength" />
+            <input
+              matInput
+              name="clericalStrength"
+              [(ngModel)]="clericalStrength"
+              required
+            />
           </mat-form-field>
         </div>
       </div>
@@ -95,15 +144,29 @@
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Last Auditing Year</mat-label>
-            <input matInput name="lastAuditingYear" [(ngModel)]="lastAuditingYear" />
+            <input
+              matInput
+              name="lastAuditingYear"
+              [(ngModel)]="lastAuditingYear"
+              required
+            />
           </mat-form-field>
         </div>
         <div class="col-md-3">
           <mat-form-field>
             <mat-label>Last Auditing Date</mat-label>
-            <input matInput [matDatepicker]="lastAuditingDatepicker"/>
-            <mat-hint>DD/MM/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="lastAuditingDatepicker"></mat-datepicker-toggle>
+            <input
+              matInput
+              [matDatepicker]="lastAuditingDatepicker"
+              name="lastAuditingDate"
+              [(ngModel)]="lastAuditingDate"
+              required
+              [max]="maxLastAuditingDate"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="lastAuditingDatepicker"
+            ></mat-datepicker-toggle>
             <mat-datepicker #lastAuditingDatepicker></mat-datepicker>
           </mat-form-field>
         </div>
@@ -111,9 +174,13 @@
     </mat-card-content>
     <mat-card-actions>
       <div class="button-row">
-        <button mat-stroked-button color="primary">Cancel</button>
-        <button mat-stroked-button color="primary">Clear</button>
-        <button mat-raised-button color="primary" (click)="onConfirm()">Confirm</button>
+        <!-- <button mat-stroked-button color="primary">Cancel</button> -->
+        <button mat-stroked-button color="primary" (click)="onClear()">
+          Clear
+        </button>
+        <button mat-raised-button color="primary" (click)="onConfirm()">
+          Confirm
+        </button>
       </div>
     </mat-card-actions>
   </mat-card>

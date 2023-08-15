@@ -21,9 +21,17 @@ export class AddSchoolDetailsComponent {
   clericalStrength: string = '';
   lastAuditingYear: string = '';
   lastAuditingDate: string = '';
+  districts: string[] = districts;
+  schoolTypes: string[] = schoolTypes;
+  minRetirementDate: Date = new Date();
+  maxLastAuditingDate: Date = new Date();
 
   constructor(private auditingService: AuditingService) {
 
+  }
+
+  ngOnInit() {
+    this.maxLastAuditingDate.setDate(this.maxLastAuditingDate.getDate() - 1);
   }
 
   onConfirm() {
@@ -47,4 +55,29 @@ export class AddSchoolDetailsComponent {
     });
   }
 
+  onClear() {
+    this.udiseNo = '';
+    this.schoolType = '';
+    this.schoolName = '';
+    this.district = '';
+    this.headmasterName = '';
+    this.headmasterRetirementDate = '';
+    this.headmasterMobileNo = '';
+    this.email = '';
+    this.studentsStrength = '';
+    this.teachersStrength = '';
+    this.clericalStrength = '';
+    this.lastAuditingYear = '';
+    this.lastAuditingDate = '';
+  }
+
 }
+
+const districts: string[] = ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode',
+  'Kallakurichi', 'Kancheepuram', 'Karur', 'Krishnagiri', 'Madurai', 'Mayiladuthurai', 'Nagapattinam', 'Kanniyakumari', 'Namakkal', 'Perambalur',
+  'Pudukottai', 'Ramanathapuram', 'Ranipettai', 'Salem', 'Sivagangai', 'Tenkasi', 'Thanjavur', 'Theni', 'Thiruvallur', 'Thiruvarur', 'Thoothukudi',
+  'Thiruchirapalli', 'Thirunelveli', 'Tiruppathur', 'Tiruppur', 'Tiruvannamalai', 'The Nilgiris', 'Vellore', 'Viluppuram', 'Virudhunagar'
+]
+
+const schoolTypes: string[] = ['Govt High School', 'Govt Higher Secondary School', 'Municipal High School',
+  'Munical Higher Secondary School', 'Aided High School', 'Aided Higher Secondary School']

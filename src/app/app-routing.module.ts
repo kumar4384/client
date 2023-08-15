@@ -5,7 +5,7 @@ import { SchoolAuditDataComponent } from './school-audit-data/school-audit-data.
 import { AddSchoolDetailsComponent } from './add-school-details/add-school-details.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AddSchoolDetailsComponent },
   { path: 'schoolAuditData', component: SchoolAuditDataComponent },
   { path: 'addSchoolDetails', component: AddSchoolDetailsComponent }
 ];
