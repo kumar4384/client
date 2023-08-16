@@ -1,4 +1,5 @@
 export interface School {
+    _id?: string,
     udiseNo: string,
     schoolType: string,
     schoolName: string,

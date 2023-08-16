@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>School details added successfully.</h1>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-md-3">UDISE No: {{ data.udiseNo }}</div>
+    <div class="col-md-3">School Type: {{ data.schoolType }}</div>
+    <div class="col-md-3">School Name: {{ data.schoolName }}</div>
+    <div class="col-md-3">District: {{ data.district }}</div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="col-md-3">HM Name: {{ data.headmasterName }}</div>
+    <div class="col-md-3">
+      HM Retirement Date: {{ data.headmasterRetirementDate }}
+    </div>
+    <div class="col-md-3">HM Mobile No: {{ data.headmasterMobileNo }}</div>
+    <div class="col-md-3">Email: {{ data.email }}</div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="col-md-3">Total Students: {{ data.studentsStrength }}</div>
+    <div class="col-md-3">Teachers Strength: {{ data.teachersStrength }}</div>
+    <div class="col-md-3">Clerical Strength: {{ data.clericalStrength }}</div>
+    <div class="col-md-3"></div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="col-md-3">Last Auditing Year: {{ data.lastAuditingYear }}</div>
+    <div class="col-md-3">Last Auditing Date: {{ data.lastAuditingDate }}</div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <div class="button-row">
+    <button mat-stroked-button color="primary" (click)="closeDialog()">Close</button>
+  </div>
+</div>

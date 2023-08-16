@@ -6,8 +6,8 @@ import { AddSchoolDetailsComponent } from './add-school-details/add-school-detai
 
 const routes: Routes = [
   { path: '', component: AddSchoolDetailsComponent },
-  { path: 'schoolAuditData', component: SchoolAuditDataComponent },
-  { path: 'addSchoolDetails', component: AddSchoolDetailsComponent }
+  { path: 'addSchoolDetails', component: AddSchoolDetailsComponent },
+  { path: 'schoolAuditData', component: SchoolAuditDataComponent }
 ];
 
 @NgModule({

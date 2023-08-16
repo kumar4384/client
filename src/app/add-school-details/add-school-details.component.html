@@ -1,7 +1,7 @@
-<form class="form-container">
+<form class="form-container" #f="ngForm" (ngSubmit)="f.form.valid && submitData()">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>School Details</mat-card-title>
+      <mat-card-title>Add School Details</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
@@ -175,10 +175,11 @@
     <mat-card-actions>
       <div class="button-row">
         <!-- <button mat-stroked-button color="primary">Cancel</button> -->
-        <button mat-stroked-button color="primary" (click)="onClear()">
+        <!-- <button mat-stroked-button color="primary" (click)="populateData()">Populate date</button> -->
+        <button mat-stroked-button color="primary" (click)="clearData()">
           Clear
         </button>
-        <button mat-raised-button color="primary" (click)="onConfirm()">
+        <button type="submit" mat-raised-button color="primary">
           Confirm
         </button>
       </div>

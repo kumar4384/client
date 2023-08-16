@@ -15,15 +15,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { AddSchoolDetailsComponent } from './add-school-details/add-school-details.component';
+import { AddSchoolDetailsSuccessComponent } from './add-school-details-success/add-school-details-success.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SchoolAuditDataComponent,
-    AddSchoolDetailsComponent
+    AddSchoolDetailsComponent,
+    AddSchoolDetailsSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { AddSchoolDetailsComponent } from './add-school-details/add-school-detai
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [
