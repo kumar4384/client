@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AddSchoolDetailsComponent } from './add-school-details/add-school-details.component';
 import { AddSchoolDetailsSuccessComponent } from './add-school-details-success/add-school-details-success.component';
@@ -44,6 +45,7 @@ import { AddSchoolDetailsSuccessComponent } from './add-school-details-success/a
     MatNativeDateModule,
     MatToolbarModule,
     MatDialogModule,
+    MatIconModule,
     HttpClientModule
   ],
   providers: [
