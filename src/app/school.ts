@@ -4,6 +4,7 @@ export interface School {
     schoolType: string,
     schoolName: string,
     district: string,
+    educationalDistrict: string;
     headmasterName: string,
     headmasterRetirementDate: string,
     headmasterMobileNo: string,

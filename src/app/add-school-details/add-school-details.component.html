@@ -1,17 +1,21 @@
-<form class="form-container" #f="ngForm" (ngSubmit)="f.form.valid && submitData()">
+<form
+  class="form-container"
+  #f="ngForm"
+  (ngSubmit)="f.form.valid && submitData()"
+>
   <mat-card>
     <mat-card-header>
       <mat-card-title>Add School Details</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>UDISE No</mat-label>
             <input matInput name="udiseNo" [(ngModel)]="udiseNo" required />
           </mat-form-field>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>School Type</mat-label>
             <mat-select
@@ -28,7 +32,7 @@
           </mat-form-field>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>School Name</mat-label>
             <input
@@ -39,8 +43,9 @@
             />
           </mat-form-field>
         </div>
-
-        <div class="col-md-3">
+      </div>
+      <div class="row">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>District</mat-label>
             <mat-select name="district" [(ngModel)]="district" required>
@@ -52,9 +57,19 @@
             </mat-select>
           </mat-form-field>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
+
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Education District</mat-label>
+            <input
+              matInput
+              name="educationDistrict"
+              [(ngModel)]="educationDistrict"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>HM Name</mat-label>
             <input
@@ -65,8 +80,9 @@
             />
           </mat-form-field>
         </div>
-
-        <div class="col-md-3">
+      </div>
+      <div class="row">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>HM Retirement Date</mat-label>
             <input
@@ -85,7 +101,7 @@
           </mat-form-field>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>HM Mobile No</mat-label>
             <input
@@ -97,7 +113,7 @@
           </mat-form-field>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput name="email" [(ngModel)]="email" required />
@@ -106,7 +122,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Total Students</mat-label>
             <input
@@ -117,7 +133,7 @@
             />
           </mat-form-field>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Teachers Strength</mat-label>
             <input
@@ -128,7 +144,7 @@
             />
           </mat-form-field>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Clerical Strength</mat-label>
             <input
@@ -141,7 +157,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Last Auditing Year</mat-label>
             <input
@@ -152,7 +168,7 @@
             />
           </mat-form-field>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <mat-form-field>
             <mat-label>Last Auditing Date</mat-label>
             <input
@@ -175,13 +191,13 @@
     <mat-card-actions>
       <div class="button-row">
         <!-- <button mat-stroked-button color="primary">Cancel</button> -->
-        <!-- <button mat-stroked-button color="primary" (click)="populateData()">Populate date</button> -->
+        <button mat-stroked-button color="primary" (click)="populateData()">
+          Populate data
+        </button>
         <button mat-stroked-button color="primary" (click)="clearData()">
           Clear
         </button>
-        <button type="submit" mat-raised-button color="primary">
-          Confirm
-        </button>
+        <button type="submit" mat-raised-button color="primary">Confirm</button>
       </div>
     </mat-card-actions>
   </mat-card>

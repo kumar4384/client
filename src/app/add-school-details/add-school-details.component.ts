@@ -4,6 +4,7 @@ import { School } from '../school';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AddSchoolDetailsSuccessComponent } from '../add-school-details-success/add-school-details-success.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-school-details',
@@ -15,6 +16,7 @@ export class AddSchoolDetailsComponent {
   schoolType: string = '';
   schoolName: string = '';
   district: string = '';
+  educationDistrict: string = '';
   headmasterName: string = '';
   headmasterRetirementDate: string = '';
   headmasterMobileNo: string = '';
@@ -43,6 +45,7 @@ export class AddSchoolDetailsComponent {
       schoolType: this.schoolType,
       schoolName: this.schoolName,
       district: this.district,
+      educationalDistrict: this.educationDistrict,
       headmasterName: this.headmasterName,
       headmasterRetirementDate: new Date(this.headmasterRetirementDate).toLocaleDateString(),
       headmasterMobileNo: this.headmasterMobileNo,
@@ -55,6 +58,7 @@ export class AddSchoolDetailsComponent {
     };
     this.auditingService.addSchoolDetails(schoolDetails).subscribe(res => {
       console.log("school details added successfully");
+      this.clearData();
       this.dialog.open(AddSchoolDetailsSuccessComponent, {
         data: res.schoolDetails,
       });
@@ -66,6 +70,7 @@ export class AddSchoolDetailsComponent {
     this.schoolType = '';
     this.schoolName = '';
     this.district = '';
+    this.educationDistrict = '';
     this.headmasterName = '';
     this.headmasterRetirementDate = '';
     this.headmasterMobileNo = '';
@@ -82,6 +87,7 @@ export class AddSchoolDetailsComponent {
     this.schoolType = 'Govt High School';
     this.schoolName = 'KHN High School';
     this.district = 'Krishnagiri';
+    this.educationDistrict = 'Hosur';
     this.headmasterName = 'Kumar';
     this.headmasterRetirementDate = '05/05/2025';
     this.headmasterMobileNo = '91637';

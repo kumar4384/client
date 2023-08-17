@@ -9,7 +9,7 @@ import * as XLSX from 'xlsx';
   styleUrls: ['./school-audit-data.component.scss']
 })
 export class SchoolAuditDataComponent {
-  displayedColumns: string[] = ['udiseNo', 'schoolType', 'schoolName', 'district', 'headmasterName', 'headmasterRetirementDate', 'headmasterMobileNo', 'email', 'studentsStrength', 'teachersStrength', 'clericalStrength', 'lastAuditingYear', 'lastAuditingDate', 'action'];
+  displayedColumns: string[] = ['udiseNo', 'schoolType', 'schoolName', 'district', 'educationalDistrict', 'headmasterName', 'headmasterRetirementDate', 'headmasterMobileNo', 'email', 'studentsStrength', 'teachersStrength', 'clericalStrength', 'lastAuditingYear', 'lastAuditingDate', 'action'];
   dataSource: School[] = [];
   constructor(private auditingService: AuditingService) {
 
