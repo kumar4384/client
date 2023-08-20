@@ -12,6 +12,6 @@ export interface School {
     studentsStrength: string,
     teachersStrength: string,
     clericalStrength: string,
-    lastAuditingYear: string,
+    lastAuditingPeriod: string,
     lastAuditingDate: string
 }

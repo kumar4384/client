@@ -10,19 +10,21 @@
     <mat-card-content>
       <div class="row">
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>UDISE No</mat-label>
-            <input matInput name="udiseNo" [(ngModel)]="udiseNo" required />
+            <input
+              matInput
+              name="udiseNo"
+              [(ngModel)]="udiseNo"
+              required
+              maxlength="6"
+            />
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>School Type</mat-label>
-            <mat-select
-              name="selectedSchoolType"
-              [(ngModel)]="schoolType"
-              required
-            >
+            <mat-select name="schoolType" [(ngModel)]="schoolType" required>
               <mat-option
                 *ngFor="let schoolType of schoolTypes"
                 [value]="schoolType"
@@ -33,7 +35,7 @@
         </div>
 
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>School Name</mat-label>
             <input
               matInput
@@ -46,31 +48,41 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>District</mat-label>
-            <mat-select name="district" [(ngModel)]="district" required>
+            <mat-select
+              name="district"
+              [(ngModel)]="district"
+              required
+              (selectionChange)="setEducationalDistricts($event.value)"
+            >
               <mat-option
                 *ngFor="let district of districts"
                 [value]="district"
-                >{{ district }}</mat-option
+                >{{ district.district }}</mat-option
               >
             </mat-select>
           </mat-form-field>
         </div>
 
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>Education District</mat-label>
-            <input
-              matInput
+            <mat-select
               name="educationDistrict"
               [(ngModel)]="educationDistrict"
               required
-            />
+            >
+              <mat-option
+                *ngFor="let educationDistrict of educationalDistricts"
+                [value]="educationDistrict"
+                >{{ educationDistrict }}</mat-option
+              >
+            </mat-select>
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>HM Name</mat-label>
             <input
               matInput
@@ -83,7 +95,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>HM Retirement Date</mat-label>
             <input
               matInput
@@ -102,7 +114,7 @@
         </div>
 
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>HM Mobile No</mat-label>
             <input
               matInput
@@ -114,16 +126,22 @@
         </div>
 
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>Email</mat-label>
-            <input matInput name="email" [(ngModel)]="email" required />
+            <input
+              matInput
+              name="email"
+              [(ngModel)]="email"
+              required
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+            />
           </mat-form-field>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>Total Students</mat-label>
             <input
               matInput
@@ -134,7 +152,7 @@
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
             <mat-label>Teachers Strength</mat-label>
             <input
               matInput
@@ -145,8 +163,8 @@
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field>
-            <mat-label>Clerical Strength</mat-label>
+          <mat-form-field [style.width.px]="400">
+            <mat-label>Non-teaching Strength</mat-label>
             <input
               matInput
               name="clericalStrength"
@@ -158,18 +176,38 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <mat-form-field>
-            <mat-label>Last Auditing Year</mat-label>
-            <input
-              matInput
-              name="lastAuditingYear"
-              [(ngModel)]="lastAuditingYear"
+          <mat-form-field [style.width.px]="400">
+            <mat-label>Last Auditing Period - From</mat-label>
+            <mat-select
+              name="lastAuditingPeriodFrom"
+              [(ngModel)]="lastAuditingPeriodFrom"
               required
-            />
+              (selectionChange)="updateYearsArray($event.value)"
+            >
+              <mat-option *ngFor="let year of fromYearsArray" [value]="year">{{
+                year
+              }}</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div class="col-md-4">
-          <mat-form-field>
+          <mat-form-field [style.width.px]="400">
+            <mat-label>Last Auditing Period - To</mat-label>
+            <mat-select
+              name="lastAuditingPeriodTo"
+              [(ngModel)]="lastAuditingPeriodTo"
+              required
+            >
+              <mat-option
+                *ngFor="let lastAuditingPeriodTo of toYearsArray"
+                [value]="lastAuditingPeriodTo"
+                >{{ lastAuditingPeriodTo }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field [style.width.px]="400">
             <mat-label>Last Auditing Date</mat-label>
             <input
               matInput
@@ -191,9 +229,9 @@
     <mat-card-actions>
       <div class="button-row">
         <!-- <button mat-stroked-button color="primary">Cancel</button> -->
-        <!-- <button mat-stroked-button color="primary" (click)="populateData()">
+        <button mat-stroked-button color="primary" (click)="populateData()">
           Populate data
-        </button> -->
+        </button>
         <button mat-stroked-button color="primary" (click)="clearData()">
           Clear
         </button>
