@@ -4,9 +4,14 @@
 }
 
 .icon-display {
-    transform: scale(2);
- }
+  transform: scale(2);
+}
 
- th {
+th {
   background-color: lightblue !important;
- }
+  font-size: 10px !important;
+}
+
+td, button {
+  font-size: 10px !important;
+}
